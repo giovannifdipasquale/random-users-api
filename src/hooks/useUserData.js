@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function useUserList() {
+function useUserData() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -8,7 +8,7 @@ function useUserList() {
   useEffect(() => {
     async function fetchUsers() {
       try {
-        let response = await fetch("https://randomuser.me/api/?results=10");
+        let response = await fetch("https://randomuser.me/api/?results=90");
         let data = await response.json();
         setUsers(data.results);
       } catch (err) {
@@ -24,4 +24,4 @@ function useUserList() {
   return { users, loading, error };
 }
 
-export default useUserList;
+export default useUserData;
