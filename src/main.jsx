@@ -7,6 +7,7 @@ import UserList from "./pages/UserList";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Layout from "./layout/layout";
+import HomePage from "./pages/HomePage";
 
 const root = document.getElementById("root");
 
@@ -14,7 +15,7 @@ ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <Routes>
       <Route element={<Layout />}>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/users" element={<UserList />} />
       </Route>
