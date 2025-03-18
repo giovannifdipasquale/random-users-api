@@ -1,4 +1,5 @@
 import useUserData from "../hooks/useUserData.js";
+import { Link } from "react-router";
 function UserList() {
   const { users, loading, error } = useUserData();
   return (
@@ -7,7 +8,7 @@ function UserList() {
       {loading && <p>Loading...</p>}
       {error && <p>{error.message}</p>}
 
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -30,7 +31,7 @@ function UserList() {
               <td> {user.cell} </td>
               <td>
                 {" "}
-                <Link to={`/users/${user.login.uuid}`}>Detail</Link>{" "}
+                <Link to={`/user/${user.login.uuid}`}>Detail</Link>{" "}
               </td>
             </tr>
           ))}
